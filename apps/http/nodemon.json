@@ -1,0 +1,7 @@
+{
+    "watch": ["src", ".env", "package.json", "tsconfig.json"],
+    "ignore": ["uploads"],
+    "delay": 250,
+    "ext": "ts,js,json,tsx,jsx",
+    "exec": "ts-node ./src/index.ts"
+  }
