@@ -15,7 +15,7 @@ model User {
   email     String   @unique
   password  String
   avatarId  String?
-  role      Role     @default(USER)
+  role      Role     @default(User)
   spaces    Space[]
   avatar    Avatar?  @relation(fields: [avatarId], references: [id])
 }
@@ -89,6 +89,6 @@ model Avatar {
 
 // ---------------enum----------------
 enum Role {
-  USER
-  ADMIN
+  User
+  Admin
 }
