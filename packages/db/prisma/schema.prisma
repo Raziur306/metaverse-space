@@ -62,6 +62,7 @@ model Map {
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
   height     Int
+  thumbnail  String
   width      Int
   name       String
   mapElement MapElement[]
