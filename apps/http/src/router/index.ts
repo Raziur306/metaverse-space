@@ -82,8 +82,22 @@ router.post("/signup", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/element", (req: Request, res: Request) => {});
-router.get("/avatars", (req: Request, res: Response) => {});
+router.get("/elements", async (req: Request, res: Response) => {
+  try {
+    const elements = await prisma.element.findMany();
+    res.status(200).json(elements);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }            
+});
+router.get("/avatars", async(req: Request, res: Response) => {
+  try {
+    const avatars = await prisma.avatar.findMany();
+    res.status(200).json(avatars);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 //import router
 router.use("/user", userMiddleware, userRouter);
