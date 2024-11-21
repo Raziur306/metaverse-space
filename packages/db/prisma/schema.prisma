@@ -26,7 +26,7 @@ model Space {
   updatedAt DateTime       @updatedAt
   name      String
   width     Int
-  heigh     Int?
+  height    Int?
   thumbnail String?
   creatorId String
   creator   User           @relation(fields: [creatorId], references: [id])
@@ -52,6 +52,7 @@ model Element {
   width         Int
   height        Int
   imageUrl      String
+  static        Boolean
   spaceElements SpaceElement[]
   mapElements   MapElement[]
 }
