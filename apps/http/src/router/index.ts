@@ -6,6 +6,8 @@ import prisma from "@repo/db/client";
 import express, { Request, Response, Router } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import userMiddleware from "../middleware/user";
+import adminMiddleware from "../middleware/admin";
 
 const router = Router();
 
@@ -84,8 +86,8 @@ router.get("/element", (req: Request, res: Request) => {});
 router.get("/avatars", (req: Request, res: Response) => {});
 
 //import router
-router.use("/user", userRouter);
-router.use("/space", spaceRouter);
-router.use("/admin", adminRouter);
+router.use("/user", userMiddleware, userRouter);
+router.use("/space", userMiddleware, spaceRouter);
+router.use("/admin", adminMiddleware, adminRouter);
 
 export { router };
