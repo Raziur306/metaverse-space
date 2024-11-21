@@ -39,11 +39,5 @@ describe("Authorization test", () => {
       })
     ).json();
     console.log(res);
-   // expect(res.token).toBeDefined();
-    // await prisma.user.delete({
-    //   where: {
-    //     email: "example@gmail.com",
-    //   },
-    // });
   });
 });

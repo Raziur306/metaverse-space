@@ -117,10 +117,24 @@ spaceRouter.post("/element", async (req: Request, res: Response) => {
         id: parsedData.data.spaceId,
         creatorId: res.locals.userId,
       },
+      select: {
+        width: true,
+        height: true,
+      },
     });
 
     if (!space) {
       res.status(400).json({ error: "Space not found" });
+      return;
+    }
+
+    if (
+      parsedData.data.x < 0 ||
+      parsedData.data.y < 0 ||
+      parsedData.data.x > space.width ||
+      parsedData.data.y > space?.height!
+    ) {
+      res.status(400).json({ error: "Element is out of boundary" });
       return;
     }
 
