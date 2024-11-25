@@ -62,6 +62,7 @@ export class User {
               },
               users: RoomManager.getInstance()
                 .rooms.get(this.spaceId!)
+                ?.filter((x) => x.id !== this.id)
                 ?.map((u) => {
                   id: u.id;
                 }),
@@ -83,7 +84,7 @@ export class User {
 
           break;
         }
-        case "move": {
+        case "movement": {
           const moveX = parsedData.payload.x;
           const moveY = parsedData.payload.y;
           this.x = moveX;
