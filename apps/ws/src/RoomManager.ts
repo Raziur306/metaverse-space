@@ -34,4 +34,14 @@ export class RoomManager {
       }
     });
   }
+
+  public removeUserFromRoom(spaceId: string, user: User) {
+    if (!this.rooms.has(spaceId)) {
+      return;
+    }
+    this.rooms.set(
+      spaceId,
+      this.rooms.get(spaceId)?.filter((u) => u.id !== user.id) ?? []
+    );
+  }
 }

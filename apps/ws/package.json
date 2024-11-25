@@ -12,12 +12,14 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/ws": "^8.5.13",
     "nodemon": "^3.1.7",
     "typescript": "^5.6.3"
   },
   "dependencies": {
     "@repo/db": "*",
+    "jsonwebtoken": "^9.0.2",
     "ws": "^8.18.0"
   }
 }
