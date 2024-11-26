@@ -1,0 +1,10 @@
+{
+  "name": "test",
+  "packageManager": "yarn@4.5.2",
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

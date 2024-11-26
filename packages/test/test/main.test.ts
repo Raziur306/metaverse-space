@@ -1,4 +1,3 @@
-// import prisma from "@repo/db/client";
 const BASE_URL = "http://localhost:3000";
 
 test("Health test", async () => {
